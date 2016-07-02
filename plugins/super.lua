@@ -257,6 +257,90 @@ local function unlock_group_etehad(msg, data, target)
   end
 end
 
+ local function lock_group_support(msg, data, target)
+    if not is_momod(msg) then
+      return
+    end
+    local group_support_lock = data[tostring(target)]['settings']['support']
+    if group_support_lock == 'yes' then
+      return 'support setting is already locked'
+    else
+      data[tostring(target)]['settings']['support'] = 'yes'
+      save_data(_config.moderation.data, data)
+      return 'support setting has been locked'
+    end
+  end
+  
+  local function unlock_group_support(msg, data, target)
+    if not is_momod(msg) then
+      return
+    end
+    local group_support_lock = data[tostring(target)]['settings']['support']
+    if group_support_lock == 'no' then
+      return 'support setting is not locked'
+    else
+      data[tostring(target)]['settings']['support'] = 'no'
+      save_data(_config.moderation.data, data)
+      return 'support setting has been unlocked'
+    end
+  end
+ 
+   local function lock_group_normal(msg, data, target)
+     if not is_momod(msg) then
+       return
+     end
+     local group_normal_lock = data[tostring(target)]['settings']['normal']
+     if group_normal_lock == 'yes' then
+       return 'normal setting is already locked'
+     else
+       data[tostring(target)]['settings']['normal'] = 'yes'
+       save_data(_config.moderation.data, data)
+       return 'normal setting has been locked'
+     end
+   end
+   
+   local function unlock_group_normal(msg, data, target)
+     if not is_momod(msg) then
+       return
+     end
+     local group_normal_lock = data[tostring(target)]['settings']['normal']
+     if group_normal_lock == 'no' then
+       return 'normal setting is not locked'
+     else
+       data[tostring(target)]['settings']['normal'] = 'no'
+       save_data(_config.moderation.data, data)
+       return 'normal setting has been unlocked'
+     end
+   end
+ 
+  local function lock_group_family(msg, data, target)
+    if not is_momod(msg) then
+      return
+    end
+    local group_family_lock = data[tostring(target)]['settings']['family']
+    if group_family_lock == 'yes' then
+      return 'family setting is already locked'
+    else
+      data[tostring(target)]['settings']['family'] = 'yes'
+      save_data(_config.moderation.data, data)
+      return 'family setting has been locked'
+    end
+  end
+  
+  local function unlock_group_family(msg, data, target)
+    if not is_momod(msg) then
+      return
+    end
+    local group_family_lock = data[tostring(target)]['settings']['family']
+    if group_family_lock == 'no' then
+      return 'family setting is not locked'
+    else
+      data[tostring(target)]['settings']['family'] = 'no'
+      save_data(_config.moderation.data, data)
+      return 'family setting has been unlocked'
+    end
+  end
+ 
 local function lock_group_leave(msg, data, target)
   if not is_momod(msg) then
     return
@@ -1030,10 +1114,25 @@ function show_supergroup_settingsmod(msg, target)
 			data[tostring(target)]['settings']['etehad'] = 'no'
 		end
 	end
+	 	if data[tostring(target)]['settings'] then
+  		if not data[tostring(target)]['settings']['support'] then
+  			data[tostring(target)]['settings']['support'] = 'no'
+  		end
+  	end
+   	if data[tostring(target)]['settings'] then
+   		if not data[tostring(target)]['settings']['normal'] then
+   			data[tostring(target)]['settings']['normal'] = 'no'
+   		end
+   	end
+  	if data[tostring(target)]['settings'] then
+  		if not data[tostring(target)]['settings']['family'] then
+  			data[tostring(target)]['settings']['family'] = 'no'
+  		end
+  	end
   local gp_type = data[tostring(msg.to.id)]['group_type']
   
   local settings = data[tostring(target)]['settings']
-  local text = "____________________\n⚙SuperGroup settings⚙:⬇️\n____________________\n⚓️Lock links : "..settings.lock_link.."\n📞Lock contacts: "..settings.lock_contacts.."\n⚠️Lock flood: "..settings.flood.."\n☢Flood sensitivity : "..NUM_MSG_MAX.."\n☣Lock spam: "..settings.lock_spam.."\n🗣Lock Arabic/persian: "..settings.lock_arabic.."\n👥Lock Member: "..settings.lock_member.."\n🚧Lock RTL: "..settings.lock_rtl.."\n👁‍🗨Lock Tgservice: "..settings.lock_tgservice.."\n👻Lock sticker: "..settings.lock_sticker.."\n#⃣Lock tag(#): "..settings.tag.."\n😐Lock emoji: "..settings.emoji.."\n🔠Lock english: "..settings.english.."\n🔄Lock fwd(forward): "..settings.fwd.."\n🔀Lock reply: "..settings.reply.."\n☠Lock join: "..settings.join.."\n🆔Lock username(@): "..settings.username.."\n🔇Lock media: "..settings.media.."\n🔞Lock fosh: "..settings.fosh.."\n🚷Lock leave: "..settings.leave.."\n👾Lock bots: "..bots_protection.."\n📵Lock operator: "..settings.operator.."\n____________________\n⚙Easy Sweet&Faster Switch⚙:⬇️\n____________________\n🔰Switch Model Etehad: "..settings.etehad.."\n⛔️Lock all: "..settings.all.."\n____________________\nℹ️About Groupℹ️:⬇️\n____________________\n✏️group type: "..gp_type.."\n🚸Public: "..settings.public.."\n📡Strict settings: "..settings.strict.."\n____________________\n>>bot version : v5⃣<<\nTurbo BoT\n>>Turbo ™<<"
+  local text = "____________________\n⚙SuperGroup settings⚙:⬇️\n____________________\n⚓️Lock links : "..settings.lock_link.."\n📞Lock contacts: "..settings.lock_contacts.."\n⚠️Lock flood: "..settings.flood.."\n☢Flood sensitivity : "..NUM_MSG_MAX.."\n☣Lock spam: "..settings.lock_spam.."\n🗣Lock Arabic/persian: "..settings.lock_arabic.."\n👥Lock Member: "..settings.lock_member.."\n🚧Lock RTL: "..settings.lock_rtl.."\n👁‍🗨Lock Tgservice: "..settings.lock_tgservice.."\n👻Lock sticker: "..settings.lock_sticker.."\n#⃣Lock tag(#): "..settings.tag.."\n😐Lock emoji: "..settings.emoji.."\n🔠Lock english: "..settings.english.."\n🔄Lock fwd(forward): "..settings.fwd.."\n🔀Lock reply: "..settings.reply.."\n☠Lock join: "..settings.join.."\n🆔Lock username(@): "..settings.username.."\n🔇Lock media: "..settings.media.."\n🔞Lock fosh: "..settings.fosh.."\n🚷Lock leave: "..settings.leave.."\n👾Lock bots: "..bots_protection.."\n📵Lock operator: "..settings.operator.."\n____________________\n⚙Easy Sweet&Faster Switch⚙:⬇️\n____________________\n🔰Switch Model Etehad: "..settings.etehad.."\nSwitch Model support: "..settings.support.."\nSwitch Model normal: "..settings.normal.."\nSwitch Model family: "..settings.family.."\n⛔️Lock all: "..settings.all.."\n____________________\nℹ️About Groupℹ️:⬇️\n____________________\n✏️group type: "..gp_type.."\n🚸Public: "..settings.public.."\n📡Strict settings: "..settings.strict.."\n____________________\n>>bot version : v5⃣<<\nTurbo BoT\n>>Turbo ™<<"
   return text
 end
 
@@ -2166,6 +2265,84 @@ local function run(msg, matches)
       	}
       	return lock_group_etehad(msg, data, target), etehad
       end
+       			     if matches[2] == 'support' then
+        	local support ={
+            lock_group_links(msg, data, target),
+  		lock_group_tag(msg, data, target),
+  		lock_group_spam(msg, data, target),
+  		lock_group_flood(msg, data, target),
+  		unlock_group_arabic(msg, data, target),
+  		unlock_group_membermod(msg, data, target),
+  		unlock_group_rtl(msg, data, target),
+  		lock_group_tgservice(msg, data, target),
+  		unlock_group_sticker(msg, data, target),
+  		lock_group_contacts(msg, data, target),
+  		unlock_group_english(msg, data, target),
+  		lock_group_fwd(msg, data, target),
+  		unlock_group_reply(msg, data, target),
+  		unlock_group_join(msg, data, target),
+  		unlock_group_emoji(msg, data, target),
+  		lock_group_username(msg, data, target),
+  		lock_group_fosh(msg, data, target),
+  		unlock_group_media(msg, data, target),
+  		unlock_group_leave(msg, data, target),
+  		lock_group_bots(msg, data, target),
+  		lock_group_operator(msg, data, target),
+        	}
+        	return lock_group_support(msg, data, target), support
+        end
+   			     if matches[2] == 'normal' then
+         	local normal ={
+             unlock_group_links(msg, data, target),
+   		unlock_group_tag(msg, data, target),
+   		lock_group_spam(msg, data, target),
+   		lock_group_flood(msg, data, target),
+   		unlock_group_arabic(msg, data, target),
+   		unlock_group_membermod(msg, data, target),
+   		unlock_group_rtl(msg, data, target),
+   		lock_group_tgservice(msg, data, target),
+   		unlock_group_sticker(msg, data, target),
+   		unlock_group_contacts(msg, data, target),
+   		unlock_group_english(msg, data, target),
+   		unlock_group_fwd(msg, data, target),
+   		unlock_group_reply(msg, data, target),
+   		unlock_group_join(msg, data, target),
+   		unlock_group_emoji(msg, data, target),
+   		unlock_group_username(msg, data, target),
+   		unlock_group_fosh(msg, data, target),
+   		unlock_group_media(msg, data, target),
+   		unlock_group_leave(msg, data, target),
+   		lock_group_bots(msg, data, target),
+  		unlock_group_operator(msg, data, target),
+        	}
+        	return lock_group_normal(msg, data, target), normal
+        end
+  			     if matches[2] == 'family' then
+        	local family ={
+            lock_group_links(msg, data, target),
+  		unlock_group_tag(msg, data, target),
+  		lock_group_spam(msg, data, target),
+  		lock_group_flood(msg, data, target),
+  		unlock_group_arabic(msg, data, target),
+  		unlock_group_membermod(msg, data, target),
+  		unlock_group_rtl(msg, data, target),
+  		lock_group_tgservice(msg, data, target),
+  		unlock_group_sticker(msg, data, target),
+  		unlock_group_contacts(msg, data, target),
+  		unlock_group_english(msg, data, target),
+  		unlock_group_fwd(msg, data, target),
+  		unlock_group_reply(msg, data, target),
+  		unlock_group_join(msg, data, target),
+  		unlock_group_emoji(msg, data, target),
+  		lock_group_username(msg, data, target),
+  		lock_group_fosh(msg, data, target),
+  		unlock_group_media(msg, data, target),
+  		unlock_group_leave(msg, data, target),
+  		lock_group_bots(msg, data, target),
+  		unlock_group_operator(msg, data, target),
+        	}
+        	return lock_group_family(msg, data, target), family
+        end
 			if matches[2] == 'links' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked link posting ")
 				return lock_group_links(msg, data, target)
@@ -2310,6 +2487,84 @@ local function run(msg, matches)
       	}
       	return unlock_group_etehad(msg, data, target), detehad
       end
+       	  	if matches[2] == 'support' then
+        	local dsupport ={
+            unlock_group_links(msg, data, target),
+  		unlock_group_tag(msg, data, target),
+  		lock_group_spam(msg, data, target),
+  		lock_group_flood(msg, data, target),
+  		unlock_group_arabic(msg, data, target),
+  		unlock_group_membermod(msg, data, target),
+  		unlock_group_rtl(msg, data, target),
+  		unlock_group_tgservice(msg, data, target),
+  		unlock_group_sticker(msg, data, target),
+  		unlock_group_contacts(msg, data, target),
+ 		unlock_group_english(msg, data, target),
+  		unlock_group_fwd(msg, data, target),
+  		unlock_group_reply(msg, data, target),
+  		unlock_group_join(msg, data, target),
+  		unlock_group_emoji(msg, data, target),
+  		unlock_group_username(msg, data, target),
+  		unlock_group_fosh(msg, data, target),
+  		unlock_group_media(msg, data, target),
+  		unlock_group_leave(msg, data, target),
+ 		lock_group_bots(msg, data, target),
+  		unlock_group_operator(msg, data, target),
+        	}
+        	return unlock_group_support(msg, data, target), dsupport
+        end
+   	  	if matches[2] == 'normal' then
+         	local dnormal ={
+             lock_group_links(msg, data, target),
+   		lock_group_tag(msg, data, target),
+   		lock_group_spam(msg, data, target),
+   		lock_group_flood(msg, data, target),
+   		lock_group_arabic(msg, data, target),
+   		lock_group_membermod(msg, data, target),
+   		lock_group_rtl(msg, data, target),
+   		unlock_group_tgservice(msg, data, target),
+   		lock_group_sticker(msg, data, target),
+   		lock_group_contacts(msg, data, target),
+   		lock_group_english(msg, data, target),
+   		lock_group_fwd(msg, data, target),
+   		lock_group_reply(msg, data, target),
+   		lock_group_join(msg, data, target),
+   		lock_group_emoji(msg, data, target),
+   		lock_group_username(msg, data, target),
+   		lock_group_fosh(msg, data, target),
+   		lock_group_media(msg, data, target),
+   		lock_group_leave(msg, data, target),
+  		unlock_group_bots(msg, data, target),
+   		lock_group_operator(msg, data, target),
+         	}
+         	return unlock_group_normal(msg, data, target), dnormal
+         end
+       if matches[2] == 'family' then
+        	local dfamily ={
+            unlock_group_links(msg, data, target),
+  		unlock_group_tag(msg, data, target),
+  		lock_group_spam(msg, data, target),
+  		lock_group_flood(msg, data, target),
+  		unlock_group_arabic(msg, data, target),
+  		unlock_group_membermod(msg, data, target),
+  		unlock_group_rtl(msg, data, target),
+  		lock_group_tgservice(msg, data, target),
+  		unlock_group_sticker(msg, data, target),
+  		unlock_group_contacts(msg, data, target),
+  		unlock_group_english(msg, data, target),
+  		unlock_group_fwd(msg, data, target),
+  		unlock_group_reply(msg, data, target),
+  		unlock_group_join(msg, data, target),
+  		unlock_group_emoji(msg, data, target),
+  		unlock_group_username(msg, data, target),
+  		unlock_group_fosh(msg, data, target),
+  		unlock_group_media(msg, data, target),
+  		unlock_group_leave(msg, data, target),
+  		lock_group_bots(msg, data, target),
+  		unlock_group_operator(msg, data, target),
+        	}
+        	return unlock_group_family(msg, data, target), dfamily
+        end
 			if matches[2] == 'links' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked link posting")
 				return unlock_group_links(msg, data, target)
