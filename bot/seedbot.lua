@@ -245,7 +245,7 @@ function create_config( )
     "lock_tag",
     "lock_reply",
     "set_type",
-    "dlpm",
+    "delpm",
     "gitpull",
     "setwlc"
     },
