@@ -1,7 +1,7 @@
 local function solid(msg, matches)
 if matches[1]:lower() == 'del' then 
       if not is_solid(msg) then
-        return "شما سلید نیستید!"
+        return "شما سودو نیستی"
       end
 if matches[2] == 'gbanlist' then
 local hash = 'gbanned'
