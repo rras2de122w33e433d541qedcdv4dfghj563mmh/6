@@ -25,7 +25,7 @@ local function logadd(msg)
 	end
 	data[tostring(GBan_log)][tostring(msg.to.id)] = msg.to.peer_id
 	save_data(_config.moderation.data, data)
-	local text = 'Log_SuperGroup has has been set!'
+	local text = 'Log SuperGroup has has been set!'
 	reply_msg(msg.id,text,ok_cb,false)
 	return
 end
@@ -41,7 +41,7 @@ local function logrem(msg)
 	end
 	data[tostring(GBan_log)][tostring(msg.to.id)] = nil
 	save_data(_config.moderation.data, data)
-	local text = 'Log_SuperGroup has has been removed!'
+	local text = 'Log SuperGroup has has been removed!'
 	reply_msg(msg.id,text,ok_cb,false)
 	return
 end
@@ -261,7 +261,7 @@ end
 	if matches[1] == 'reload' then
 		receiver = get_receiver(msg)
 		reload_plugins(true)
-		post_msg(receiver, "Reloaded!", ok_cb, false)
+		post_msg(receiver, "", ok_cb, false)
 		return "Reloaded!"
 	end
 	--[[*For Debug*
@@ -280,18 +280,18 @@ end
 	end
 	if matches[1] == 'addlog' and not matches[2] then
 		if is_log_group(msg) then
-			return "Already a Log_SuperGroup"
+			return "Already a Log SuperGroup"
 		end
-		print("Log_SuperGroup "..msg.to.title.."("..msg.to.id..") added")
-		savelog(msg.to.id, name_log.." ["..msg.from.id.."] added Log_SuperGroup")
+		print("Log SuperGroup "..msg.to.title.."("..msg.to.id..") added")
+		savelog(msg.to.id, name_log.." ["..msg.from.id.."] added Log SuperGroup")
 		logadd(msg)
 	end
 	if matches[1] == 'remlog' and not matches[2] then
 		if not is_log_group(msg) then
-			return "Not a Log_SuperGroup"
+			return "Not a Log SuperGroup"
 		end
-		print("Log_SuperGroup "..msg.to.title.."("..msg.to.id..") removed")
-		savelog(msg.to.id, name_log.." ["..msg.from.id.."] added Log_SuperGroup")
+		print("Log SuperGroup "..msg.to.title.."("..msg.to.id..") removed")
+		savelog(msg.to.id, name_log.." ["..msg.from.id.."] added Log SuperGroup")
 		logrem(msg)
 	end
     return
