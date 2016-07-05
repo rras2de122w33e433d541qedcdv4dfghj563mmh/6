@@ -11,7 +11,7 @@ local function get_value(msg, var_name)
     if not value then
       return
     else
-      return var_name..':\n'..value
+      return value
     end
   end
 end
@@ -22,7 +22,7 @@ local function run(msg, matches)
   end
   if matches[2] then
     local name = user_print_name(msg.from)
-    savelog(msg.to.id, name.." ["..msg.from.id.."] used /get ".. matches[2])-- save to logs
+    savelog(msg.to.id, name.." ["..msg.from.id.."]".. matches[2])-- save to logs
     return get_value(msg, matches[2])
   else
     return
@@ -31,7 +31,7 @@ end
 
 return {
   patterns = {
-    "^([#!/]get) (.+)$"
+    "^([/#!])(.+)$"
   },
   run = run
 }
