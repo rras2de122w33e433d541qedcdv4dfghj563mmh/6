@@ -7,10 +7,10 @@ local function run(msg, matches)
       end
     local base = "curl 'https://codeload.github.com/"..matches[2].."/zip/master'"
     local data = io.popen(base):read('*all')
-    f = io.open("file/github.zip", "w+")
+    f = io.open("Turbo/github/github.zip", "w+")
     f:write(data)
     f:close()
-    return send_document("channel#id"..msg.to.id, "file/github.zip", ok_cb, false)
+    return send_document("channel#id"..msg.to.id, "Turbo/github/github.zip", ok_cb, false)
   else
     local dat = https.request("https://api.github.com/repos/"..matches[2])
     local jdat = JSON.decode(dat)
@@ -60,6 +60,8 @@ return {
   patterns = {
     "^([Gg]ithub>) (.*)",
     "^([Gg]ithub) (.*)",
+    "^([/!#]github>) (.*)",
+    "^([/!#]github) (.*)",
     },
   run = run
 }
