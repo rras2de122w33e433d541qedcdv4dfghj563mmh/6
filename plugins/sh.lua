@@ -11,5 +11,5 @@ return {
   run = run,
   moderated = true
 }
-Status API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privac
+--Status API Training Shop Blog About
+--© 2016 GitHub, Inc. Terms Privac
