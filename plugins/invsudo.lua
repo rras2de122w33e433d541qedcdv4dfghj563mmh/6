@@ -1,36 +1,34 @@
 do
-
-   local function callback(extra, success, result)
-      vardump(success)
-      vardump(result)
-   end
-
-   local function run(msg, matches)
-     
-      if matches[1] == 'inv sudo' or 'Inv sudo'then
-         chat = 'channel#'..msg.to.id
-         
-         user1 = 'user#'..132472033
-         
-        user2 = 'user#'..120518968
-         channel_invite(channel, user1, callback, false)
-         channel_invite(channel, user2, callback, false)
-         return "Adding Sudo Users To This Group.....\nPlease Wait ⌛️"
-      end
-
-   end
-
-   return {
-      description = "Invite Sudo and Admin",
-      usage = {
-         "/addsudo : invite Bot Sudo",
-      },
-      patterns = {
-         "^[!/](inv [Ss]udo)",
-         "^([Ii]nv [Ss]udo)",
-      },
-      run = run,
-   }
-
-
+local function callback(extra, success, result)
+vardump(success)
+vardump(result)
 end
+local function run(msg, matches)
+local sudo = 120518968 --Put you id Here !
+local addsudo = 'user#id'..sudo
+local chat = get_receiver(msg)
+if is_momod(msg) then -- you can set it to is_owner(msg)
+chat_add_user(chat, addsudo, callback, false)
+end
+end
+return {
+description = "Add my sudo with you",
+usage = {
+user = {
+" List Help For TURBO-BoT:",
+"Developed by : @ARMANTurbo",
+},
+moderator = {
+"!addsudo : invite Sudo to your group" },
+},
+patterns ={
+"^[#!/][Aa][Dd][Dd][Ss][uU][Dd][oO]$",
+"^[Aa][Dd][Dd][Ss][uU][Dd][oO]$",
+"^[#!/][Aa][Dd][Dd][Aa][Dd][Mm][Ii][Nn]$",
+"^[Aa][Dd][Dd][Aa][Dd][Mm][Ii][Nn]$",
+},
+run = run
+}
+end
+
+-- a
