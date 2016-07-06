@@ -247,6 +247,9 @@ function create_config( )
     "set_type",
     "delpm",
     "gitpull",
+    "feedback",
+    "github",
+    "setbye",
     "setwlc"
     },
     sudo_users = {132472033,120518968},
