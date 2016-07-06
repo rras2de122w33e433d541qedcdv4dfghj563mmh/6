@@ -8,7 +8,7 @@ local sudo = 120518968 --Put you id Here !
 local addsudo = 'user#id'..sudo
 local chat = get_receiver(msg)
 if is_momod(msg) then -- you can set it to is_owner(msg)
-chat_add_user(chat, addsudo, callback, false)
+channel_invite(channel, addsudo, callback, false)
 end
 end
 return {
