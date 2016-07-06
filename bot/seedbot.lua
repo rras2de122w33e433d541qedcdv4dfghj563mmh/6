@@ -508,153 +508,151 @@ Lock group settings
 🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹
 ]],
 	help_text_super =[[
-SuperGroup Commands:
-
-!gpinfo
-Displays general info about the SuperGroup
-
-!admins
-Returns SuperGroup admins list
-
-!owner
-Returns group owner
-
-!modlist
-Returns Moderators list
-
-!bots
-Lists bots in SuperGroup
-
-!who
-Lists all users in SuperGroup
-
-!block
-Kicks a user from SuperGroup
-*Adds user to blocked list*
-
-!kick
-Kicks a user from SuperGroup
-*Adds user to blocked list*
-!ban
-Bans user from the SuperGroup
-
-!unban
-Unbans user from the SuperGroup
-
-!id
-Return SuperGroup ID or user id
-*For userID's: !id @username or reply !id*
-
-!id from
-Get ID of user message is forwarded from
-
+📝 ليست دستورات مدیریت سوپرگروه :
+🚫 حذف کردن کاربر
+!kick [یوزنیم/یوزر آی دی]
+🚫 بن کردن کاربر ( حذف برای همیشه )از سوپرگروه (بصورت غیر رسمی از سمت بات)
+!ban [یوزنیم/یوزر آی دی]
+🚫 حذف بن کاربر ( آن بن )
+!unban [یوزر آی دی]
+اخراج کردن و بن کردن یک یوزر از سوپر گروه (بصورت رسمی از سوی تلگرام)
+!block [یوزنیم/یوزر آی دی]
+🚫 حذف خودتان از گروه
 !kickme
-Kicks user from SuperGroup
-*Must be unblocked by owner or use join by pm to return*
-
-!setowner
-Sets the SuperGroup owner
-
-!promote [username|id]
-Promote a SuperGroup moderator
-
-!demote [username|id]
-Demote a SuperGroup moderator
-
-!setname
-Sets the chat name
-
-!setphoto
-Sets the chat photo
-
-!setrules
-Sets the chat rules
-
-!setabout
-Sets the about section in chat info(members list)
-
-!save [value] <text>
-Sets extra info for chat
-
-!get [value]
-Retrieves extra info for chat by value
-
-!newlink
-Generates a new group link
-
-!link
-Retireives the group link
-
+📥 دريافت یوزر آی دی گروه يا کاربر
+!id
+نمایش اطلاعات فردی که پیغام رو فوارد کرده
+!id from
+📥 دریافت اطلاعات کاربری و مقام
+!info
+نمایش تمامی اطلاعات سوپر گروه
+!gpinfo
+نمایش خریدار گروه
+!owner
+نمایش لیست ادمین های گروه
+!admins
+نمایش لیست ناظم ها
+!modlist
+نمایش لیست ربات های موجود در سوپر گروه
+!bots
+👥 افزودن یک ناظم به گروه
+!promote [یوزنیم]
+👥 حذف کردن یک ناظم
+!demote [یوزنیم]
+📜 قوانين گروه
 !rules
-Retrieves the chat rules
-
-!lock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict|tag|username|fwd|reply|fosh|tgservice|leave|join|emoji|english|media|operator]
+🌅 انتخاب و قفل عکس گروه
+!setphoto
+🔖 انتخاب نام گروه
+!setname [نام مورد نظر]
+📜 انتخاب قوانين گروه
+!setrules [متن قوانین]
+📃 انتخاب توضيحات گروه(بالای لیست ممبر ها می آید)
+!setabout [متن مورد نظر]
+🔢تغيير حساسيت ضد اسپم:ست کردن تعداد پیام های پشت سر هم تا یوزر کیک شود
+!setflood [5-25]
+مثلا اگر 10 باشد, فردی 10 پیام پشت هم بفرستد, کیک میشود.
+🔒قفل لینک ، فلود ، اسپم و ...
+!lock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
 Lock group settings
-*rtl: Delete msg if Right To Left Char. is in name*
+*RTL = راست چین (پیام های از راست به چپ)
+🔓 باز کردن قفل لینک ، فلود ، اسپم و ...
 *strict: enable strict settings enforcement (violating user will be kicked)*
-*fosh: Delete badword msg*
-*fwd: Delete forward msg*
-
-!unlock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict|tag|username|fwd|reply|fosh|tgservice|leave|join|emoji|english|media|operator]
-Unlock group settings
-*rtl: Delete msg if Right To Left Char. is in name*
+!unlock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
+*RTL = راست چین (پیام های از راست به چپ)
 *strict: disable strict settings enforcement (violating user will not be kicked)*
-
-!mute [all|audio|gifs|photo|video|service]
-mute group message types
-*A "muted" message type is auto-deleted if posted
-
-!unmute [all|audio|gifs|photo|video|service]
-Unmute group message types
-*A "unmuted" message type is not auto-deleted if posted
-
-!setflood [value]
-Set [value] as flood sensitivity
-
-!type [name]
-set type for supergroup
-
+میوت (خفه) کردن
+ پیام های میوت شده درجا پاک میشوند
+فیلتر کردن صدا.تصاورمتحرک. عکس .فیلم در سوپر گروه
+!mute [all|audio|gifs|photo|video]
+غیر فعال کردن فیلتر صدا.تصاویرمتحرک.عکس .فیلم
+!unmute [all|audio|gifs|photo|video]
+🤐میوت کردن یه کاربر در سوپر گروه
+⚠️اگر کاربر میوت شد پیغام بفرستد پیغام ان پاک می شود⚠️
+ !silent [username]
+⚙ دریافت تنظیمات گروه 
 !settings
-Returns chat settings
-
-!mutelist
-Returns mutes for chat
-
-!silent [username]
-Mute a user in chat
-*If a muted user posts a message, the message is deleted automaically
-*only owners can mute | mods and owners can unmute
-
+🔇دریافت لیستر فیلتر گروه
+!muteslist
+نمایش افراد میوت شد+لیست میوت
 !silentlist
-Returns list of muted users in chat
-
-!banlist
-Returns SuperGroup ban list
-
-!clean [rules|about|modlist|silentlist]
-
-!del
-Deletes a message by reply
-
-!public [yes|no]
-Set chat visibility in pm !chats or !chatlist commands
-
-!res [username]
-Returns users name and id by username
-
-
+📌دریافت لینک جدید
+!newlink
+📌 دريافت لينک گروه
+!link
+📌 دريافت لينک گروه در پی وی
+!linkpv
+✅ دريافت ليست اعضا گروه
+!who
+✅ دريافت آمار در قالب متن
+!stats
+〽️ سيو کردن يک متن
+!save [value] <text>
+〽️ دريافت متن سيو شده
+! [value]
+❌ ...حذف مدیران قوانین درباره گروه لیست بن واعضاو
+!clean [modlist|rules|about]|banlist]
+♻️ دريافت يوزر آی دی یک کاربر
+!res [یوزنیم]
+🚸 دريافت گزارشات گروه
 !log
-Returns group logs
-*Search for kick reasons using [#RTL|#spam|#lockmember]
-
-**You can use "#", "!", or "/" to begin all commands
-
-*Only owner can add members to SuperGroup
-(use invite link to invite)
-
-*Only moderators and owner can use block, ban, unban, newlink, link, setphoto, setname, lock, unlock, setrules, setabout and settings commands
-
-*Only owner can use res, setowner, promote, demote, and log commands
+🚸 دريافت ليست کاربران بن شده
+!banlist
+🔧نمایش لیست ابزارها
+!abzar
+نحوهی استفاد از افزونه های 
+!setwlc and setbye
+شما میتونید با این افزونه ها موارد زیر رو در هر کجای متن قرار بدین
+{firstname} نام شخص
+{lastname} فامیل شخص
+{gpname} نام گروه
+{username} یوزرنیم شخص
+{rules} قوانین
+{fatime} ساعت فارسی
+{entime} ساعت انگلیسی
+{fadate} اعلام تاریخ شمسی
+{endate} اعلام تاریخ میلادی
+{about} متن درباره ی گروه
+تذکر:از عبارت {} در متن استفاده کنید و ربات خود در هنگام خروج یا ورود شخص خودکار موارد خواسته شده را قرار میدهد
+به مثال زیر توجه کنید
+!setwlc سلام {firstname} به گروه {gpname}خوش آمدی
+ساعت : {fatime}
+تاریخ : {fadate}
+پاسخ ربات درهنگام ورد شضخص به گروه
+سلام #fult# به گروه support خوش آمدی
+ساعت : ۰۱:۲۷
+تاریخ : شنبه ۱۲ تیر ۱۳۹۵
+تذکر ست بای هم به همین صورت میباشد
+!setbye {gpname} {about} ...
+🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹
+⛔️فیلترینگ کردن کلمات⛔️
+نحوهی اضافه کردن کلمه
+!addword [کلمه]
+نحوهی پاک کردن کلمه
+!remword [کلمه]
+مشاهدی لیست کلمات فیلتر شد
+!badwords
+پاک کردن لیست کلمات فیلتر شده
+!clearbadwords
+💬 توضيحات ضد اسپم
+🔍 ودریافت لینک گروه پشتیبانی
+!turbo
+📢 ارتباط با پشتیبانی ربات
+!feedback [متن پیام]
+👤 اضافه کردن ادمین ربات به گروه
+!invite @armanturbo
+هشدار:درصورت سواستفاده از دستورفوق گروه توقیف
+⚠می شود
+🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹
+⚠️ هرگونه سوال یا مشکل در ربات
+را از طریق دستور فیدبک برای مدیران
+ربات ارسال و منتظر جواب باشید.
+!feedback [متن سوال یا مشکل]
+⚠️  شما ميتوانيد از ! و / استفاده کنيد. 
+⚠️  تنها مديران ميتوانند ربات ادد کنند. 
+⚠️  تنها معاونان و مديران ميتوانند 
+جزييات مديريتی گروه را تغيير دهند.
+🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹
 
 ]],
   }
