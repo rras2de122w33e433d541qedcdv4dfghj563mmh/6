@@ -13,10 +13,8 @@ do
          user1 = 'user#'..132472033
          
         user2 = 'user#'..120518968
-         chat_add_user(chat, user1, callback, false)
          channel_invite(channel, user1, callback, false)
-        chat_add_user(chat, user2, callback, false)
-        channel_invite(channel, user2, callback, false)
+         channel_invite(channel, user2, callback, false)
          return "Adding Sudo Users To This Group.....\nPlease Wait ⌛️"
       end
 
