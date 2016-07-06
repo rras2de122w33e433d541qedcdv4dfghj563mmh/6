@@ -9,8 +9,8 @@
   local llink = http.request('http://llink.ir/yourls-api.php?signature=a13360d6d8&action=shorturl&url='..URL.escape(matches[1])..'&format=simple')
    local s2a = http.request('http://s2a.newsandroid.ir/api.php?url='..URL.escape(matches[1]))
    local gs2 = http.request('http://gs2.ir/api.php?url='..URL.escape(matches[1]))
- 
-    return 'Link :\n'..data.data.long_url..'\n___________________________\ngs2 :\n'..gs2..'\n___________________________\nS2a :\n'..s2a..'\n___________________________ \n Bitly \n'..data.data.url..'\n___________________________\nYeo :\n'..yeo..'\n___________________________\nOpizo :\n'..opizo..'\n___________________________\nU2s :\n'..u2s..'\n___________________________\nLlink : \n'..llink..'\n___________________________\nYon : \nyon.ir/'..jdat.output..''
+    
+    return 'Link :\n'..data.data.long_url..'\n➖➖➖➖➖➖➖➖➖\ngs2 :\n'..gs2..'\n➖➖➖➖➖➖➖➖➖\nS2a :\n'..s2a..'\n➖➖➖➖➖➖➖➖➖\n Bitly \n'..data.data.url..'\n➖➖➖➖➖➖➖➖➖\nYeo :\n'..yeo..'\n➖➖➖➖➖➖➖➖➖\nOpizo :\n'..opizo..'\n➖➖➖➖➖➖➖➖➖\nU2s :\n'..u2s..'\n➖➖➖➖➖➖➖➖➖\nLlink : \n'..llink..'\n➖➖➖➖➖➖➖➖➖\nYon : \nyon.ir/'..jdat.output..''
 end
 return {
   usage = "",
