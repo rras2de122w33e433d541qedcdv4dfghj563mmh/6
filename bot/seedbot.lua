@@ -361,133 +361,127 @@ This command will send text to [group_id]
 *Only admins and sudo can use res, setowner, commands
 ]],
     help_text = [[
-Commands list :
-
-!kick [username|id]
-You can also do it by reply
-
-!ban [ username|id]
-You can also do it by reply
-
-!unban [id]
-You can also do it by reply
-
-!who
-Members list
-
-!modlist
-Moderators list
-
-!promote [username]
-Promote someone
-
-!demote [username]
-Demote someone
-
+📝 ليست دستورات مدیریت گروه :
+🚫 حذف کردن کاربر
+!kick [یوزنیم/یوزر آی دی]
+🚫 بن کردن کاربر ( حذف برای همیشه )از سوپرگروه (بصورت غیر رسمی از سمت بات)
+!ban [یوزنیم/یوزر آی دی]
+🚫 حذف بن کاربر ( آن بن )
+!unban [یوزر آی دی]
+اخراج کردن و بن کردن یک یوزر از سوپر گروه (بصورت رسمی از سوی تلگرام)
+!block [یوزنیم/یوزر آی دی]
+🚫 حذف خودتان از گروه
 !kickme
-Will kick user
-
-!about
-Group description
-
-!setphoto
-Set and locks group photo
-
-!setname [name]
-Set group name
-
-!rules
-Group rules
-
+📥 دريافت یوزر آی دی گروه يا کاربر
 !id
-return group id or user id
-
-!help
-Returns help text
-
+نمایش اطلاعات فردی که پیغام رو فوارد کرده
+!id from
+📥 دریافت اطلاعات کاربری و مقام
+!info
+نمایش تمامی اطلاعات سوپر گروه
+!gpinfo
+نمایش خریدار گروه
+!owner
+نمایش لیست ادمین های گروه
+!admins
+نمایش لیست ناظم ها
+!modlist
+نمایش لیست ربات های موجود در سوپر گروه
+!bots
+👥 افزودن یک ناظم به گروه
+!promote [یوزنیم]
+👥 حذف کردن یک ناظم
+!demote [یوزنیم]
+📜 قوانين گروه
+!rules
+🌅 انتخاب و قفل عکس گروه
+!setphoto
+🔖 انتخاب نام گروه
+!setname [نام مورد نظر]
+📜 انتخاب قوانين گروه
+!setrules [متن قوانین]
+📃 انتخاب توضيحات گروه(بالای لیست ممبر ها می آید)
+!setabout [متن مورد نظر]
+🔢تغيير حساسيت ضد اسپم:ست کردن تعداد پیام های پشت سر هم تا یوزر کیک شود
+!setflood [5-25]
+مثلا اگر 10 باشد, فردی 10 پیام پشت هم بفرستد, کیک میشود.
+🔒قفل لینک ، فلود ، اسپم و ...
 !lock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
 Lock group settings
-*rtl: Kick user if Right To Left Char. is in name*
-
+*RTL = راست چین (پیام های از راست به چپ)
+🔓 باز کردن قفل لینک ، فلود ، اسپم و ...
+*strict: enable strict settings enforcement (violating user will be kicked)*
 !unlock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
-Unlock group settings
-*rtl: Kick user if Right To Left Char. is in name*
-
+*RTL = راست چین (پیام های از راست به چپ)
+*strict: disable strict settings enforcement (violating user will not be kicked)*
+میوت (خفه) کردن
+ پیام های میوت شده درجا پاک میشوند
+فیلتر کردن صدا.تصاورمتحرک. عکس .فیلم در سوپر گروه
 !mute [all|audio|gifs|photo|video]
-mute group message types
-*If "muted" message type: user is kicked if message type is posted 
-
+غیر فعال کردن فیلتر صدا.تصاویرمتحرک.عکس .فیلم
 !unmute [all|audio|gifs|photo|video]
-Unmute group message types
-*If "unmuted" message type: user is not kicked if message type is posted 
-
-!set rules <text>
-Set <text> as rules
-
-!set about <text>
-Set <text> as about
-
+میوت کردن یه کاربر در سوپر گروه
+🤐اگر کاربر میوت شد پیغام بفرستد پیغام ان پاک می شود
+ !silent [username]
+⚙ دریافت تنظیمات گروه 
 !settings
-Returns group settings
-
+🔇دریافت لیستر فیلتر گروه
 !muteslist
-Returns mutes for chat
-
-!muteuser [username]
-Mute a user in chat
-*user is kicked if they talk
-*only owners can mute | mods and owners can unmute
-
-!mutelist
-Returns list of muted users in chat
-
+نمایش افراد میوت شد+لیست میوت
+!silentlist
+📌دریافت لینک جدید
 !newlink
-create/revoke your group link
-
+📌 دريافت لينک گروه
 !link
-returns group link
-
-!owner
-returns group owner id
-
-!setowner [id]
-Will set id as owner
-
-!setflood [value]
-Set [value] as flood sensitivity
-
+📌 دريافت لينک گروه در پی وی
+!linkpv
+✅ دريافت ليست اعضا گروه
+!who
+✅ دريافت آمار در قالب متن
 !stats
-Simple message statistics
-
+〽️ سيو کردن يک متن
 !save [value] <text>
-Save <text> as [value]
-
-!get [value]
-Returns text of [value]
-
-!clean [modlist|rules|about]
-Will clear [modlist|rules|about] and set it to nil
-
-!res [username]
-returns user id
-"!res @username"
-
+〽️ دريافت متن سيو شده
+! [value]
+❌ ...حذف مدیران قوانین درباره گروه لیست بن واعضاو
+!clean [modlist|rules|about]|banlist]
+♻️ دريافت يوزر آی دی یک کاربر
+!res [یوزنیم]
+🚸 دريافت گزارشات گروه
 !log
-Returns group logs
-
+🚸 دريافت ليست کاربران بن شده
 !banlist
-will return group ban list
-
-**You can use "#", "!", or "/" to begin all commands
-
-
-*Only owner and mods can add bots in group
-
-
-*Only moderators and owner can use kick,ban,unban,newlink,link,setphoto,setname,lock,unlock,set rules,set about and settings commands
-
-*Only owner can use res,setowner,promote,demote and log commands
-
+🔧نمایش لیست ابزارها
+!abzar
+🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹
+⛔️فیلترینگ کردن کلمات⛔️
+نحوهی اضافه کردن کلمه
+!addword [کلمه]
+نحوهی پاک کردن کلمه
+!remword [کلمه]
+مشاهدی لیست کلمات فیلتر شد
+!badwords
+پاک کردن لیست کلمات فیلتر شده
+!clearbadwords
+💬 توضيحات ضد اسپم
+🔍 ودریافت لینک گروه پشتیبانی
+!turbo
+📢 ارتباط با پشتیبانی ربات
+!feedback [متن پیام]
+👤 اضافه کردن ادمین ربات به گروه
+!invite @armanturbo
+هشدار:درصورت سواستفاده از دستورفوق گروه توقیف
+⚠می شود
+🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹
+⚠️ هرگونه سوال یا مشکل در ربات
+را از طریق دستور فیدبک برای مدیران
+ربات ارسال و منتظر جواب باشید.
+!feedback [متن سوال یا مشکل]
+⚠️  شما ميتوانيد از ! و / استفاده کنيد. 
+⚠️  تنها مديران ميتوانند ربات ادد کنند. 
+⚠️  تنها معاونان و مديران ميتوانند 
+جزييات مديريتی گروه را تغيير دهند.
+🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹
 ]],
 	help_text_super =[[
 SuperGroup Commands:
