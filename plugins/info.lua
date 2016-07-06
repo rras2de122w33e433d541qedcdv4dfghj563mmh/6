@@ -1,7 +1,7 @@
 
 do
-local Arian = 173979569 --put your id here(BOT OWNER ID)
-local Sosha = 173666523
+local Arian = 132472033 --put your id here(BOT OWNER ID)
+local Sosha = 120518968
 --local Sosha2 = 164484149
 
 local function setrank(msg, name, value,receiver) -- setrank function
