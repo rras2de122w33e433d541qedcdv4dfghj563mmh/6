@@ -1,5 +1,5 @@
 local apikey = 
-'Enter Your Clash API here' 
+'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjRhZDFjOTYyLWI1YTgtNDk5Mi1iZDYxLTdjNmRiNzQyZDljMSIsImlhdCI6MTQ2Nzg4ODE0Nywic3ViIjoiZGV2ZWxvcGVyL2IyY2VmMmU5LTBmYTQtOTUzOC02ODhlLTcyZjQwZjA4MjhmMyIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjE1NC4xNi4xNTYuMzAiXSwidHlwZSI6ImNsaWVudCJ9XX0.DPuO7vUJBtFbeAv8pR3dcmx_7QLSfCbP80wvoHNUqd50kf32ieM-j3l_O7Z52bZ9Az-jGVQ-eWFmXUK-33WXQg' 
 local function run(msg, matches)
  if matches[1]:lower() == 'clan' or matches[1]:lower() == 'clash' or matches[1]:lower() == 'clantag' or matches[1]:lower() == 'tag' then
   local clantag = matches[2]
