@@ -20,8 +20,11 @@ end
 end
 return {
   patterns = {
-                "^[/!]([Ll]ogo>) (.*)$",
-                "^[/!]([Ll]ogo) (.*)$",
+"^(ربات)",
+"^[!/]([Rr]obat)",
+"^[!/]([Rr]obot)",
+"^(توربو)",
+"^[!/]([Tt]urbo)",
   }, 
   run = run 
 }
