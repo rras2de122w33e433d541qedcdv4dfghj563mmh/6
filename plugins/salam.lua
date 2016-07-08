@@ -5,15 +5,15 @@ local mina = 132472033
     local value = redis:hget(hash, msg.from.id)
      if not value then
         if msg.from.id == tonumber(mina) then 
-           text = text..'سلام بابایی\n\n'
-         elseif is_admin2(msg.from.id) then
-           text = text..'سلام \n\n'
-         elseif is_owner2(msg.from.id, msg.to.id) then
-           text = text..'سلام \n\n'
-         elseif is_momod2(msg.from.id, msg.to.id) then
-           text = text..'سلام \n'
+           text = text..'❤️سلام بهترین بابای دنیا💖\n\nTurbo ™'
+         elseif is_admin(msg.from.id) then
+           text = text..'💜سلام   نخودی💚 \n\n'
+         elseif is_owner(msg.from.id, msg.to.id) then
+           text = text..'❣سلام مدیر جون❣ \n\nTurbo ™'
+         elseif is_momod(msg.from.id, msg.to.id) then
+           text = text..'💘سلام معاون💞 \n\nTurbo ™'
      else
-           text = text..'سلام\n\n'
+           text = text..'سلام\n\nTurbo ™'
       end
       else
        text = text..'سلام '..value..'  \n\n'
