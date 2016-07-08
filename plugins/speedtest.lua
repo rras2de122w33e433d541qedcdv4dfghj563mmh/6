@@ -7,7 +7,7 @@ text = io.popen("speedtest-cli "):read('*all')
 end
 return {
   patterns = {
-    '^[#/!]speed test$'
+    '^[#/!]speedtest$'
   },
   run = run,
   moderated = true
