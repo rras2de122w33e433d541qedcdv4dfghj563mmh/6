@@ -181,7 +181,7 @@ local function run(msg, matches)
 
 		table.insert(result, text)
 	end
-	local result_text = "کلمه ی اولیه: "..matches[2].."\nطراحی با "..tostring(#fonts).." فونت:\n______________________________\n"
+	local result_text = "کلمه ی اولیه: "..matches[2].."\nطراحی با "..tostring(#fonts).." فونت:\n_____________________________\n"
 	a=0
 	for v=1,#result do
 		a=a+1
