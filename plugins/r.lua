@@ -17,6 +17,7 @@ if matches[2]:lower() == 'توربو' or 'turbo' then
      return 
 end
 end
+end
 return {
   patterns = {
                 "^[/!]([Ll]ogo>) (.*)$",
