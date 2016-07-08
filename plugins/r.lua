@@ -1,5 +1,4 @@
 do
-
 local function run(msg, matches)
   if matches[1]:lower() == 'ربات' or 'robat' or 'robot' then
   send_document(get_receiver(msg), "./Turbo/rank/robot.webp", ok_cb, false)
@@ -16,8 +15,8 @@ if matches[2]:lower() == 'توربو' or 'turbo' then
      elseif not is_sudo(msg) then
     send_document(get_receiver(msg), "./Turbo/rank/turbo.webp", ok_cb, false)
      return 
-   end
-  end
+end
+end
  return {
   patterns = {
                 "^[/!]([Ll]ogo>) (.*)$",
