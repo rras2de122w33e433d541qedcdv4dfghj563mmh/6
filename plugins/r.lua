@@ -18,14 +18,11 @@ if matches[2]:lower() == 'توربو' or 'turbo' then
      return 
    end
   end
-  return {
+ return {
   patterns = {
-    "^[!/]([Rr]obat)$",
-    "^[!/]([Rr]obot)$",
-    "^[!/]([Tt]urbo)$",
-    "^ربات"
-    "^توربو"
-    },
-  run = run
+                "^[/!]([Ll]ogo>) (.*)$",
+                "^[/!]([Ll]ogo) (.*)$",
+  }, 
+  run = run 
 }
 end
