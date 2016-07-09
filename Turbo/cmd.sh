@@ -19,6 +19,7 @@ memUsed_m=$(($memTotal_m-$memFree_m-$memBuffer_m-$memCache_m))
 
 memUsedPrc=$((($memUsed_b*100)/$memTotal_b))
 
+echo "🔆 Turbo ™ Server Info:"
 echo "1⃣Memory: CRITICAL Total: $memTotal_m MB"
 echo "➖➖➖➖➖➖➖➖➖"
 echo "2⃣Memory Used: $memUsed_m MB - $memUsedPrc% used!"
